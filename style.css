@@ -1,0 +1,83 @@
+@font-face {
+  font-family: bold;
+  src: url("./fonts/Barlow-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: medium;
+  src: url("./fonts/Barlow-Medium.ttf");
+}
+
+@font-face {
+  font-family: light;
+  src: url("./fonts/Barlow-Light.ttf");
+}
+
+.container {
+  margin: auto;
+  /* background-color: blue; */
+  width: 100%;
+  padding: 12px;
+}
+
+.continent {
+  width: 60%;
+}
+
+.countries {
+  /* max-width: 622px; */
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  /* grid-template-columns: repeat(5, 1fr); */
+}
+
+@media only screen and (min-width: 300px) {
+  .continent {
+    width: 100%;
+  }
+  .countries {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .countries {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.continent_name {
+  font-size: 35px;
+  font-family: light;
+}
+
+.country_container {
+  border-radius: 6px;
+  border: 2px solid rgb(107, 107, 255);
+  width: 100%;
+  padding: 10px;
+  min-width: 200px;
+  /* margin: 10px; */
+  display: flex;
+  flex-direction: column;
+  font-family: medium;
+  cursor: pointer;
+}
+
+.country_name {
+  font-size: 30px;
+  font-family: bold;
+}

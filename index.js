@@ -1,6 +1,6 @@
 const countries_elem = document.querySelector(".countries");
 
-function getCountry(country, capital, language) {
+function getCountry(country, capital) {
   return `<div class="country_container">
             <span class="country_name">${country}</span>
             <span class="country_capital">${capital}</span>
@@ -26,13 +26,13 @@ async function loadJson() {
 
   let country = "",
     capital = "";
-  for (let i = 0; i < result.length; i++) {
-    if (result[i].independent == true) {
-      country = result[i].name.common;
-      capital = arrToString(result[i].capital);
+  result.forEach((element) => {
+    if (element.independent == true) {
+      country = element.name.common;
+      capital = arrToString(element.capital);
       countries_elem.innerHTML += getCountry(country, capital);
     }
-  }
+  });
 }
 
 loadJson();

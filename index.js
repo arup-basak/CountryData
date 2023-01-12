@@ -1,5 +1,11 @@
-const countries_elem = document.querySelector(".container");
+// Main File: index.html
+//container initialization
+const container = document.querySelector(".container");
+const urlDomain = "https://restcountries.com";
+const apiVersion = 3.1
+const url = `${urlDomain}/v${apiVersion}/all`
 
+// Default Object that Stores Region data as Array
 const data = {
   Asia: [],
   Europe: [],
@@ -8,29 +14,27 @@ const data = {
   Oceania: [],
 };
 
-function getCountry(country, capital) {
-  return `  
+// Return a String that containes HTML of element
+function getContinent(continent, countries) {//Input String, Array
+  // create a empty string
+  let countryElement = "";
+
+  // For Each countries create element
+  countries.forEach((elem) => {
+    countryElement += `  
     <div class="country_container">
-      <span class="country_name">${country}</span>
-      <span class="country_capital">${capital}</span>
+      <span class="country_name">${elem[0]}</span>
+      <span class="country_capital">${elem[1]}</span>
     </div>    
       `;
-}
-
-function getCountries(arr) {
-  let str = "";
-  arr.forEach((elem) => {
-    str += getCountry(elem[0], elem[1]);
   });
-  return str;
-}
 
-function getContinent(continent, countries) {
+  // Return a HTML String of continent
   return `
   <div class="continent">
     <span class="continent_name">${continent}</span>
     <div class="countries">
-      ${getCountries(countries)}
+      ${countryElement}
     </div>
   </div>`;
 }
@@ -48,10 +52,12 @@ function arrToString(array) {
 }
 
 async function loadJson() {
-  const response = await fetch("https://restcountries.com/v3.1/all");
+  // Fetch URL
+  const response = await fetch(url);
   const result = await response.json();
-  // console.log(result);
 
+  // for Each JSON result...
+  // deine the DATA object
   result.forEach((element) => {
     if (element.independent == true) {
       data[element.region].push([
@@ -62,8 +68,7 @@ async function loadJson() {
   });
 
   for (const [key, value] of Object.entries(data)) {
-    countries_elem.innerHTML += getContinent(key, value);
-    // console.log(key)
+    container.innerHTML += getContinent(key, value);
   }
 }
 

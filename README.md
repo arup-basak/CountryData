@@ -34,10 +34,6 @@ If you want to contribute to the project, please follow these guidelines:
 4. Push to the branch (`git push origin my-feature`)
 5. Open a pull request
 
-## License
-
-This project is licensed under the MIT license.
-
 ## Contact
 
 If you have any questions or suggestions, please feel free to contact us at [email.arupbasak@gmail.com](mailto:email.arupbasak@gmail.com).

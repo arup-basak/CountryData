@@ -16,7 +16,7 @@
 .container {
   margin: auto;
   padding: 12px;
-  width: 80%;
+  width: 60%;
 }
 
 .continent {
@@ -27,6 +27,7 @@
   margin: 0 auto;
   display: grid;
   gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .country_capital {
@@ -35,37 +36,23 @@
   margin-top: 4px;
 }
 
-@media only screen and (max-width: 300px) {
+@media screen and (width <= 912px) {
+  .container {
+    width: 70%;
+  }
+
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (width <= 400px) {
   .container {
     width: 80%;
   }
 
   .countries {
     grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .container {
-    width: 70%;
-  }
-  .countries {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  .container {
-    width: 60%;
-  }
-  .countries {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media only screen and (min-width: 1800px) {
-  .countries {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 

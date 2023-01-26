@@ -13,10 +13,6 @@
   src: url("./fonts/Barlow-Light.ttf");
 }
 
-body {
-  /* background-color: rgba(255, 251, 190, 0.623); */
-}
-
 .container {
   margin: auto;
   padding: 12px;
@@ -104,7 +100,12 @@ body {
   align-items: center;
   font-family: medium;
   cursor: pointer;
-  transition: 300;
+  transition: 0.3s;
+  transform: scale(0.99);
+}
+
+.country_container:hover {
+  transform: scale(1.02);
 }
 
 .country_name {

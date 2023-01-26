@@ -37,12 +37,12 @@ function getContinent(continent, countries) {
 
   // Return a HTML String of continent
   return `
-  <div class="continent">
+  <section class="continent">
     <span class="continent_name">${continent}</span>
     <div class="countries">
       ${countryElement}
     </div>
-  </div>`;
+  </section>`;
 }
 
 function arrToString(array) {
